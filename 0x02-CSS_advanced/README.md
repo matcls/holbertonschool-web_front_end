@@ -25,7 +25,10 @@ Requirements:
 * A README.md file, at the root of the folder of the project, is mandatory
 * Your code should be W3C compliant and validate with W3C-Validator
 
+Usage:
 ---
+Open index.html in the web browser to see the final result
+Replace the <link rel='stylesheet' href='#'> by the right CSS file
 ---
 
 ## Author
