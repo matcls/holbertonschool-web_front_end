@@ -32,10 +32,10 @@ $keys: "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "
       @if $item == $seed {
         $equal: append($equal, $item, list-separator($list_to_sort));
       }
-      @else if _str-compare($item, $seed, $keys) {
+      @else if str-compare($item, $seed, $keys) {
         $less: append($less, $item, list-separator($list_to_sort));
       }
-      @else if not _str-compare($item, $seed, $keys) {
+      @else if not str-compare($item, $seed, $keys) {
         $large: append($large, $item, list-separator($list_to_sort));
       }
     }
