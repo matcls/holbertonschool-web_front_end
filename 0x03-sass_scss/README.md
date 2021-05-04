@@ -1,7 +1,7 @@
 # 0x03. Sass & Scss
 
 ## Description
-What you should learn from this project:
+What you should learn from this project:bulb:
 
 * What Sass means
 * How to write Sass & Scss file
@@ -15,6 +15,7 @@ What you should learn from this project:
 * How to manipulate operators
 
 ---
+
 ---
 
 ## Author
