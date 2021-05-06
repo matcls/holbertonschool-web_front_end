@@ -1,0 +1,52 @@
+.container {
+  align-items: baseline;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  align-items: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.box1 {
+  background-color: #31C631;
+  border: solid 0.07rem #31A631;
+  font-size: 1.4em;
+  height: 60px;
+  width: 80px;
+}
+
+.box2 {
+  background-color: #1C9AC9;
+  border: 0.07rem solid #1C7AC9;
+  font-size: 2.2rem;
+  height: 80px;
+  width: 120px;
+}
+
+.box3 {
+  background-color: #354163;
+  border: 0.07rem solid #352163;
+  font-size: 5rem;
+  height: 130px;
+  width: 220px;
+}
+
+.box4 {
+  background-color: #80429C;
+  border: 0.07rem solid #80229C;
+  font-size: 2.2rem;
+  height: 80px;
+  width: 120px;
+}
+
+.box5 {
+  background-color: #E89868;
+  border: 0.07rem solid #E87868;
+  font-size: 1.2rem;
+  height: 60px;
+  width: 80px;
+}
