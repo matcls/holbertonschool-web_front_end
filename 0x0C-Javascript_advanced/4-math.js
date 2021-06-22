@@ -23,7 +23,7 @@ function addBy(firstNumber, secondNumber) {
 /**
  * Clousures
  */
-let addBy100 = function(x) { return addBy(x, 100); };
-let addBy1000 = function(x) { return addBy(x, 1000); };
-let divideBy10 = function(x) { return divideBy(10, x); };
-let divideBy100 = function(x) { return divideBy(100, x); };
+const addBy100 = function(x) { return addBy(x, 100); };
+const addBy1000 = function(x) { return addBy(x, 1000); };
+const divideBy10 = function(x) { return divideBy(10, x); };
+const divideBy100 = function(x) { return divideBy(100, x); };
