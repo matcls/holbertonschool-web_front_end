@@ -1,7 +1,21 @@
+/**
+ * Gives access to four public methods (return an object):
+ *  setName, sets the private variable name
+ *  rewardStudent, it calls the method changeScoreBy with 1
+ *  penalizeStudent, it calls the method changeScoreBy with -1
+ *  getScore, it returns name: score (ex: Harry: 14)
+ *
+ * @return     {Object}  object containing 4 public methods 
+ */
 function studentHogwarts() {
   let privateScore = 0;
   let name = null;
 
+  /**
+   * Change the score
+   *
+   * @param      {int}  points  The points
+   */
   function changeScoreBy(points) {
     privateScore += points;
   }
