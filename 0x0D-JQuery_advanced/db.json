@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Abagael"
+    },
+    {
+      "title": "fd",
+      "author": "Adeline",
+      "id": 2
+    },
+    {
+      "title": "fd",
+      "author": "Rosie",
+      "id": 3
+    },
+    {
+      "title": "f",
+      "author": "Aidan",
+      "id": 4
+    },
+    {
+      "title": "a",
+      "author": "Ahron",
+      "id": 5
+    },
+    {
+      "title": "f",
+      "author": "Ethel",
+      "id": 6
+    },
+    {
+      "title": "d",
+      "author": "Ezra",
+      "id": 7
+    },
+    {
+      "title": "e",
+      "author": "Frances",
+      "id": 8
+    },
+    {
+      "title": "b",
+      "author": "Haley",
+      "id": 9
+    },
+    {
+      "title": "c",
+      "author": "Holly",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
