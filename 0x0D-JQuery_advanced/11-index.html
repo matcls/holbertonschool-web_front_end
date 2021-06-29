@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Task 11</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <script type="application/javascript">
+        function addPostRow(data) {
+            $('body').append(`
+          <p>
+          <span>Post created with id ${data.id}, title: ${data.title}, author: ${data.author}</span>
+          </p>
+          `);
+        }
+
+        function listPosts() {
+            const url = 'http://localhost:3000/posts';
+            $.get(url, { _sort: "id", _order: "desc" }, (
+                data,
+                status,
+                info
+            ) => {
+                if (info.readyState === 4 && info.status === 200) {
+                    data.forEach((post) => {
+                        addPostRow(post);
+                    });
+                }
+            }).fail(() => {
+                alert("Server Error");
+            });
+        }
+
+        function buildForm() {
+            $('body').append(`
+            <form>
+                <div>
+                    <label for='author'>Author</label>
+                    <input type='text' id='author'>
+                </div>
+                <div>
+                    <label for='title'>Title</label>
+                    <textarea id='title'></textarea>
+                </div>
+                <input type='submit'>
+            </form>
+            `);
+            $('input:last').click((event) => {
+                event.preventDefault();
+                sendForm();
+            });
+        }
+
+        function sendForm() {
+            const $text = $("<p>About to send the query to the API</p>");
+            $('form').after($text);
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:3000/posts',
+                data: {
+                    title: $('#title').val(),
+                    author: $('#author').val()
+                },
+                success: (response) => {
+                    addPostRow(response);
+                    //Clear form data after sending it
+                    $("#author").val("");
+                    $("#title").val("");
+                    setTimeout(() => { $text.remove(); }, 200);
+
+                },
+                error: (error) => {
+                    alert("Error sending the POST query");
+                    setTimeout(() => { $text.remove(); }, 200);
+                }
+            });
+
+        }
+
+        listPosts();
+        buildForm();
+
+    </script>
+</body>
+
+</html>
