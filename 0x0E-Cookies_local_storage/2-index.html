@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies and Local Storage</title>
+</head>
+
+<body>
+    <h1>Login to the website</h1>
+    <input type="text" id="firstname">
+    <input type="text" id="email">
+    <button type="button" onclick="setCookies();">Log me in</button>
+    <h1>Cookies</h1>
+    <button type="button" onclick="showCookies();">Show the cookies</button>
+
+    <script>
+        function setCookies() {
+            const firstname = document.getElementById('firstname').value;
+            const email = document.getElementById('email').value;
+            const date = new Date();
+            date.setDate(date.getDate() + 10);
+            const expires = `expires=${date.toUTCString()}`;
+            document.cookie = `firstname=${firstname}; ${expires}; path=/`;
+            document.cookie = `email=${email}; ${expires}; path=/`;
+        }
+
+        function showCookies() {
+            const p = document.createElement('p');
+            const email = getCookie('email');
+            const firstname = getCookie('firstname');
+            p.innerHTML = `Email: ${email} - Firstname: ${firstname}`;
+            document.body.append(p);
+        }
+
+        function getCookie(name) {
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const ca = decodedCookie.split(';');
+            for (let i of ca) {
+                let cookie = i.split('=');
+                if (cookie[0].trim() === name) return cookie[1];
+            }
+            return "";
+        }
+    </script>
+
+</body>
+
+</html>
